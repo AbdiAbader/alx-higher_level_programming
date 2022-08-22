@@ -6,15 +6,17 @@
 */
 int check_cycle(listint_t *list)
 {
-listint_t *prt1 = list, *prt2 = list;
-if (prt1 == NULL || prt1->next == NULL)
+listint_t *p1, *p2;
+if (list == NULL || list->next == NULL)
 return (0);
-while (prt1->next != NULL && prt2->next->next != NULL)
+p1 = list->next;
+p2 = list->next->next;
+while (p1 && p2 && p2->next)
 {
-prt1 = prt1->next;
-prt2 = prt2->next->next;
-if (prt1 == prt2)
+if (p1 == p2)
 return (1);
+p1 = p1->next;
+p2 = p2->next->next;
 }
 return (0);
 }
