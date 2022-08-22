@@ -7,6 +7,8 @@
 int check_cycle(listint_t *list)
 {
 listint_t *prt1 = list, *prt2 = list;
+if (prt1 == NULL || prt1->next == NULL)
+return (0);
 while (prt1->next != NULL && prt2->next->next != NULL)
 {
 prt1 = prt1->next;
