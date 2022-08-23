@@ -4,4 +4,4 @@ for i in range(10):
         if a == 89:
             print('{}'.format(a))
             break
-        print(f'{:02d}, '.format(a), end='')
+        print('{:02d}, '.format(a), end='')
