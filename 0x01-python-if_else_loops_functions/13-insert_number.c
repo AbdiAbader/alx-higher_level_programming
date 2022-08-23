@@ -15,19 +15,24 @@ return (NULL);
 temp->n = number;
 temp->next = NULL;
 if (*head == NULL)
-  *head = temp;
- else
-   {
+*head = temp;
+else
+{
 while (hold->next != NULL)
 {
-if (number < hold->n || number < hold->next->n)
+if (number < hold->n || number <hold->next->n)
 break;
 hold = hold->next;
 }
 if (*head == hold)
-temp->next = hold;
+  {
+    
+    temp->next = hold;
+    *head = temp;
+    return (*head);
+  }
 temp->next = hold->next;
 hold->next = temp;
-   }
+}
 return (*head);
 }
