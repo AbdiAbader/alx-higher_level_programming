@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 /**
 *is_palindorome - palindrome checker
 *@head: head of list
@@ -6,47 +7,23 @@
 */
 int is_palindrome(listint_t **head)
 {
-int len = 0, i = 0;
- listint_t *hold1 , *tail ,*temp, *hold2;
+int len = 0, i = 0 , buff[BUFSIZ];
+listint_t *temp;
 if (*head == NULL || (*head)->next == NULL)
 return (1);
-hold1 = *head;
 temp = *head;
-tail = NULL;
 while (temp)
 {
-first(&tail, temp->n);
-temp = temp->next;
+buff[len] = temp->n;
 len++;
+temp = temp->next;
 }
-hold2 = tail;
-while (hold1)
+len--;
+while (i <= len / 2)
 {
-if ( i == len / 2)
-break;
-if (hold1->n != hold2->n)
+if(buff[i] != buff[len - i])
 return (0);
-hold1 = hold1->next;
-hold2 = hold2->next;
 i++;
 }
-free_listint(tail);
 return (1);
-}
-/**
- *first - add node at the head
- *@head: head of linked list
- *@n: number
- *Return: address of new list
- */
-listint_t *first(listint_t **head, const int n)
-{
-listint_t *temp;
-temp = malloc(sizeof(listint_t));
-if (temp == NULL)
-return (NULL);
-temp->n = n;
-temp->next = *head;
-*head = temp;
-return (temp);
 }
