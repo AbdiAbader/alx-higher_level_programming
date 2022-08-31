@@ -7,8 +7,8 @@ def roman_to_int(roman_string):
             for keys, values in rome.items():
                 if i == keys:
                     sum += values
-            if sum == 0:
-                return 0
+                else:
+                    return 0
         return sum
     else:
-        return 0
+        return sum
