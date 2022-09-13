@@ -33,7 +33,7 @@ class Node:
         self.__next_node = value
 
     def __str__(self):
-        """ string representation """
+        """String """
         return str(self.__data)
 
 
@@ -60,3 +60,14 @@ class SinglyLinkedList:
                 tmp = tmp.next_node
             new.next_node = tmp.next_node
             tmp.next_node = new
+
+    def __str__(self):
+        """String """
+        string = ""
+        tmp = self.__head
+        while tmp is not None:
+            string += str(tmp)
+            if tmp.next_node is not None:
+                string += "\n"
+            tmp = tmp.next_node
+        return string
