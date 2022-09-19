@@ -42,4 +42,4 @@ class Rectangle:
 
     def parameter(self):
         """ parameter of rectangle """
-        return self.__width + self.__height
+        return self.__width * 2 + self.__height * 2
