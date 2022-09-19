@@ -5,6 +5,7 @@
 class Rectangle:
     """ rectangle """
     def __init__(self, width=0, height=0):
+        """ constructor """
         self.width = width
         self.height = height
 
@@ -25,10 +26,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """ getter """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """ setter """
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -49,6 +52,6 @@ class Rectangle:
     def __str__(self):
         """ This method returns the string representation of the object """
         if self.__width == 0 or self.__height == 0:
-            return
+            return ""
         else:
             return ("#" * self.__width + "\n") * self.__height
