@@ -5,13 +5,13 @@
 class Rectangle:
     """ rectangle """
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
         """ getter """
-        return (self.__width)
+        return self.__width
 
     @width.setter
     def width(self, value):
