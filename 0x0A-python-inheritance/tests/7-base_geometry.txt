@@ -1,0 +1,116 @@
+# 7-base_geometry.txt
+
+This module defines an function divides all elements of a matrix ``def integer_validator(self, name, value)``.
+
+Usage
+=====
+
+``base_geometry(...)```  validates value
+---------------------
+
+::
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
+
+	>>> bg.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+::
+
+	>>> bg.integer_validator('age', '17')
+	Traceback (most recent call last):
+	...
+	TypeError: age must be an integer
+
+::
+
+	>>> bg.integer_validator('age', 17)
+	 
+
+::
+
+	>>> bg.integer_validator('name', float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+::
+
+	>>> bg.integer_validator('age', -4)
+	Traceback (most recent call last):
+	...
+	ValueError: age must be greater than 0
+
+::
+
+	>>> bg.integer_validator('age', 0)
+	Traceback (most recent call last):
+	...
+	ValueError: age must be greater than 0
+
+::
+
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+
+	>>> bg.integer_validator('name')
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+::
+
+	>>> bg.area(12)
+	Traceback (most recent call last):
+	...
+	TypeError: area() takes 1 positional argument but 2 were given
+
+	>>> bg.integer_validator('name', 12, 'hola')
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+::
+
+	>>> bg.integer_validator('name', 12.5)
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+::
+
+	>>> bg.integer_validator('name', True)
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+::
+
+	>>> doc = BaseGeometry = __import__('7-base_geometry').__doc__
+	>>> len(doc) > 1
+	True
+
+:: 
+
+	>>> doc = BaseGeometry = __import__('7-base_geometry').BaseGeometry.__doc__
+	>>> len(doc) > 1
+	True
+
+::
+
+	>>> doc = BaseGeometry = __import__('7-base_geometry').BaseGeometry.area.__doc__
+	>>> len(doc) > 1
+	True
+
+::
+
+	>>> doc = BaseGeometry = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+	>>> len(doc) > 1
+	True
