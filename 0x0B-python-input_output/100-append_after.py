@@ -8,7 +8,7 @@ def append_after(filename="", search_string="", new_string=""):
         t = ""
         for i in f:
             t += i
-            if i ==  search_string:
+            if search_string in i:
                 t += new_string
         f.seek(0)
         f.write(t)
