@@ -14,8 +14,4 @@ class Student:
         """ retrive dic represatation of class student """
         if attrs is None:
             return self.__dict__
-        d = {}
-        for key, value in self.__dict__.items():
-            if key in attrs:
-                d[key] = value
-        return d
+        return {k: v for k, v in self.__dict__.items() if k in attrs}
