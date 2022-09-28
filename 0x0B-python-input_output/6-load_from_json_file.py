@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-import json
 """ form json to object """
+
+
+import json
 
 
 def load_from_json_file(filename):
