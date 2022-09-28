@@ -3,10 +3,13 @@
 
 
 def pascal_triangle(n):
-    """ pascal triangle """
-    l = []
-    a = 1
-    for row in range(1, n + 1):
-        for r in range(1, row + 1):
-            l.append((row - r)/ r)
-    return l
+    '''return a list of integers of pascal triangle '''
+    newlist = []
+    for i in range(n):
+        newlist.append([])
+        for j in range(i + 1):
+            if j == 0 or j == i:
+                newlist[i].append(1)
+            else:
+                newlist[i].append(newlist[i - 1][j - 1] + newlist[i - 1][j])
+    return newlist
