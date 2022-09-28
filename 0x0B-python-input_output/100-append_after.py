@@ -4,7 +4,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """ append after specific string """
-    with open(filename, 'r+') as f:
+    with open(filename, mode="r+", encoding="utf-8") as f:
         t = ""
         for i in f:
             t += i
