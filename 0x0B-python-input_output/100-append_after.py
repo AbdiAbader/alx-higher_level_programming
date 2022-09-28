@@ -10,5 +10,5 @@ def append_after(filename="", search_string="", new_string=""):
             t += i
             if i ==  search_string:
                 t += new_string
-        f.seek(0, 0)
+        f.seek(0)
         f.write(t)
