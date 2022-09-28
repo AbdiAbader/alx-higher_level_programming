@@ -7,4 +7,4 @@ import json
 
 def class_to_json(obj):
     """ function class to json """
-    return json.dump(obj.__dict__)
+    return json.dumps(obj.__dict__)
