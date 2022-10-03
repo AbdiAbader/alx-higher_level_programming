@@ -118,5 +118,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ print in dic mode """
-        return {'x': self.x, 'id': self.id,
-                'height': self.height, 'width': self.width}
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
