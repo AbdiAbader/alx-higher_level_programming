@@ -1,2 +1,2 @@
 -- script that lists all the cities of California
-SELECT * FROM cities where states.id = 1;
+SELECT * FROM cities WHERE states.id = 1;
