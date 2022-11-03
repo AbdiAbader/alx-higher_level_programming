@@ -1,2 +1,2 @@
 -- list all cities
-SELECT id, name, states.name FROM cities JOIN states ON id = states.id ORDER BY id;
+SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.id = states.id ORDER BY id;
