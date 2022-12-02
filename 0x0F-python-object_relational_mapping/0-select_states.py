@@ -10,4 +10,3 @@ if __name__ == '__main__':
     cur.execute("select * from states")
     for i in cur.fetchall():
         print(i)
-
