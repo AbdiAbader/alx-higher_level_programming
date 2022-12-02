@@ -5,11 +5,8 @@ import sys
 import MySQLdb
 
 if __name__ == '__main__':
-            con = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-            cur = con.cursor()
-            command = cur.execute("select * from states")
-            for i in command:
-                print(i)
-
-
-
+    con = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    cur = con.cursor()
+    command = cur.execute("select * from states")
+    for i in command:
+        print(i)
