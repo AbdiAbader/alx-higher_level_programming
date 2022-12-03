@@ -10,4 +10,4 @@ if __name__ == "__main__":
     c = db.cursor()
     q = "SELECT * FROM states WHERE name = '{}'".format(sys.argv[4])
     c.execute(q)
-    [print(i) for i in c]
+    [print(i) for i in c if i[1] == sys.argv[4]]
