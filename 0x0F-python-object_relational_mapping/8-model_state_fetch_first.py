@@ -9,6 +9,7 @@ from sqlalchemy.sql import select
 from sqlalchemy import create_engine, engine
 from sqlalchemy import text
 
+
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(sys.argv[1],  sys.argv[2], sys.argv[3]),
@@ -18,6 +19,5 @@ if __name__ == "__main__":
         print("Nothing")
     else:
         for row in result:
-            if row:
                 print(f'{row.id}: {row.name}')
                 break
