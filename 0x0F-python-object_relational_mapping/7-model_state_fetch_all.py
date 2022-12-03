@@ -10,8 +10,9 @@ from sqlalchemy import create_engine, engine
 from sqlalchemy import text
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                            pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1],  sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
     result = engine.execute(text("select * from states"))
     for row in result:
         print(f'{row.id}: {row.name}')
