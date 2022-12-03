@@ -18,3 +18,5 @@ if __name__ == "__main__":
         if row:
             print(f'{row.id}: {row.name}')
             break
+        else:
+            print("nothing")
