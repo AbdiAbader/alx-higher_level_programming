@@ -14,9 +14,10 @@ if __name__ == "__main__":
                            .format(sys.argv[1],  sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     result = engine.execute(text("select * from states"))
-    for row in result:
-        if row:
-            print(f'{row.id}: {row.name}')
-            break
-        else:
-            print("nothing")
+    if result is None:
+        print("Nothing")
+    else:
+        for row in result:
+            if row:
+                print(f'{row.id}: {row.name}')
+                break
