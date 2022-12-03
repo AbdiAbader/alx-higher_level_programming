@@ -9,6 +9,5 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
     q = "SELECT * FROM states WHERE name = '{}'".format(sys.argv[4])
-    #c.execute(q, (sys.argv[4],))
     c.execute(q)
     [print(i) for i in c]
