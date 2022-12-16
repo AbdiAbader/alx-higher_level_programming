@@ -16,5 +16,7 @@ if __name__ == "__main__":
     r = requests.post(url, data=values)
     if r.json():
         print(f'[{r.json().get("id")}] {r.json().get("name")}')
-    else:
+    elif len(r.json() == 0):
         print("No result")
+    else:
+        print("Not a valid JSON")
