@@ -13,6 +13,6 @@ if __name__ == "__main__":
     if sys.argv[1]:
         quest = sys.argv[1]
     values = {"q": quest}
-    response = requests.post(url, data=values)
+    r = requests.post(url, data=values)
     if r.json():
         print(f'[{r.json().get("id")}] {r.json().get("name")}')
