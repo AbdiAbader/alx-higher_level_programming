@@ -10,7 +10,7 @@ import sys
 if __name__ == "__main__":
     quest = ""
     url = 'http://0.0.0.0:5000/search_user'
-    if sys.argv[1]:
+    if len(sys.argv) > 1:
         quest = sys.argv[1]
     values = {"q": quest}
     r = requests.post(url, data=values)
