@@ -14,9 +14,11 @@ if __name__ == "__main__":
         quest = sys.argv[1]
     values = {"q": quest}
     r = requests.post(url, data=values)
-    if r.json():
-        print(f'[{r.json().get("id")}] {r.json().get("name")}')
-    elif len(r.json() == 0):
-        print("No result")
-    else:
+    try:
+        response = r.json()
+        if response == {}:
+            print("No result")
+        else:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
+    except ValueError:
         print("Not a valid JSON")
