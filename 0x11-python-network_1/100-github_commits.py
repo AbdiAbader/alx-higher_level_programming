@@ -6,8 +6,9 @@ import requests
 
 
 if __name__ == "__main__":
-    comit = requests.get(
+    commit = requests.get(
         f'https://api.github.com/repos/{argv[1]}/{argv[2]}/commits').json()
-    for commit in comit[0:10]:
-        print(commit.get('sha'), end=': ')
-        print(commit.get('commit').get('author').get('name'))
+    for i in range(10):
+            print("{}: {}".format(
+                commit[i].get("sha"),
+                commit[i].get("commit").get("author").get("name")))
