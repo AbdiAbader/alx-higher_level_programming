@@ -22,5 +22,5 @@ request(process.argv[2], (err, response, body) => {
     }
     console.log(completed);
   }
-}  
+}
 );
