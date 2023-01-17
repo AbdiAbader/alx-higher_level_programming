@@ -1,28 +1,26 @@
 #!/usr/bin/node
 
 const request = require('request');
-
-if (process.argv.length < 4) {
-  console.log('Usage: ./6-completed_tasks.js USER_ID');
+if (process.argv.length < 3) {
+  console.log('Usage: ./6-completed_tasks.js URL');
   process.exit(1);
 }
-request('https://jsonplaceholder.typicode.com/todos', (err, body) => {
+request(process.argv[2], (err, response, body) => {
   if (err) {
     console.log(err);
   } else {
-    const json = JSON.parse(body.body);
-    const dict = {};
-    for (const task of json) {
+    const tasks = JSON.parse(body);
+    const completed = {};
+    for (const task of tasks) {
       if (task.completed) {
-        if (task.userId in dict) {
-          dict[task.userId] += 1;
+        if (completed[task.userId]) {
+          completed[task.userId]++;
         } else {
-          dict[task.userId] = 1;
+          completed[task.userId] = 1;
         }
       }
     }
-    for (const key in dict) {
-      console.log(key + ': ' + dict[key]);
-    }
+    console.log(completed);
   }
-});
+}  
+);
