@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const fs = require('fs');
+
 if (process.argv.length < 4) {
   console.log('Usage: ./6-completed_tasks.js USER_ID');
   process.exit(1);

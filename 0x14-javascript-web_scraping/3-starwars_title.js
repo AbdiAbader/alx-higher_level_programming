@@ -6,9 +6,9 @@ if (process.argv.length < 3) {
   process.exit(1);
 }
 request('https://swapi-api.hbtn.io/api/films/' + process.argv[2], (err, response, body) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(JSON.parse(body).title);
-    }
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(JSON.parse(body).title);
+  }
 });
